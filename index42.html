@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Examples</title>
+    <script>
+        // Function for onclick event
+        function handleClick() {
+            alert("Button clicked!");
+        }
+
+        // Function for onchange event
+        function handleChange() {
+            let inputValue = document.getElementById("textInput").value;
+            alert("Input changed to: " + inputValue);
+        }
+
+        // Function for onkeyup event
+        function handleKeyup() {
+            let keyValue = document.getElementById("keyInput").value;
+            document.getElementById("display").innerText = "You typed: " + keyValue;
+        }
+    </script>
+</head>
+<body>
+    <!-- Onclick Example -->
+    <button onclick="handleClick()">Click Me!</button>
+
+    <br><br>
+
+    <!-- Onchange Example -->
+    <label for="textInput">Type something and press enter:</label>
+    <input type="text" id="textInput" onchange="handleChange()">
+
+    <br><br>
+
+    <!-- Onkeyup Example -->
+    <label for="keyInput">Type something (keyup event):</label>
+    <input type="text" id="keyInput" onkeyup="handleKeyup()">
+    <p id="display"></p>
+</body>
+</html>

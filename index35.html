@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=prompt("Enter a number")
+        let b=prompt("Enter another number")
+
+        const twovalues={
+           one:a,
+           two:b
+        }
+
+        twovalues.one= twovalues.one+twovalues.two
+        twovalues.two= twovalues.one-twovalues.two
+        twovalues.one= twovalues.one-twovalues.two
+
+        document.write(twovalues.one,"<br>",twovalues.two)
+    </script>
+</body>
+</html>

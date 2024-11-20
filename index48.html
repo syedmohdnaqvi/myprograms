@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Methods & Properties Calculator</title>
+</head>
+<body>
+
+    <h2>Number Methods & Properties Calculator</h2>
+
+    <input type="number" id="inputnumber" placeholder="Enter a number"><br><br>
+
+    <!-- Methods -->
+    <button onclick="toStringMethod()">toString()</button>
+    <button onclick="toExponentialMethod()">toExponential()</button>
+    <button onclick="toFixedMethod()">toFixed()</button>
+    <button onclick="toPrecisionMethod()">toPrecision()</button>
+    <button onclick="valueOfMethod()">valueOf()</button>
+
+    <!-- Number Methods -->
+    <button onclick="isInteger()">Number.isInteger()</button>
+    <button onclick="isSafeInteger()">Number.isSafeInteger()</button>
+    <button onclick="parseFloatMethod()">Number.parseFloat()</button>
+    <button onclick="parseIntMethod()">Number.parseInt()</button>
+
+    <!-- Properties -->
+    <button onclick="showEPSILON()">Number.EPSILON</button>
+    <button onclick="showMAX_VALUE()">Number.MAX_VALUE</button>
+    <button onclick="showMIN_VALUE()">Number.MIN_VALUE</button>
+    <button onclick="showMAX_SAFE_INTEGER()">Number.MAX_SAFE_INTEGER</button>
+    <button onclick="showMIN_SAFE_INTEGER()">Number.MIN_SAFE_INTEGER</button>
+    <button onclick="showPOSITIVE_INFINITY()">Number.POSITIVE_INFINITY</button>
+    <button onclick="showNEGATIVE_INFINITY()">Number.NEGATIVE_INFINITY</button>
+    <button onclick="showNaN()">NaN</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        const numberInput = document.getElementById('inputnumber');
+        const resultOutput = document.getElementById('result');
+
+        // Methods
+        function toStringMethod() {
+            var num = Number(numberInput.value);
+            resultOutput.innerHTML = "toString(): " + num.toString();
+        }
+
+        function toExponentialMethod() {
+            var num = Number(numberInput.value);
+            var fractionDigits = prompt("Enter number of fractional digits for toExponential: ");
+            resultOutput.innerHTML = "toExponential(" + fractionDigits + "): " + num.toExponential(fractionDigits);
+        }
+
+        function toFixedMethod() {
+            var num = Number(numberInput.value);
+            var digits = prompt("Enter number of digits for toFixed: ");
+            resultOutput.innerHTML = "toFixed(" + digits + "): " + num.toFixed(digits);
+        }
+
+        function toPrecisionMethod() {
+            var num = Number(numberInput.value);
+            var precision = prompt("Enter precision for toPrecision: ");
+            resultOutput.innerHTML = "toPrecision(" + precision + "): " + num.toPrecision(precision);
+        }
+
+        function valueOfMethod() {
+            var num = Number(numberInput.value);
+            resultOutput.innerHTML = "valueOf(): " + num.valueOf();
+        }
+
+        // Number Methods
+        function isInteger() {
+            var num = Number(numberInput.value);
+            resultOutput.innerHTML = "Number.isInteger(): " + Number.isInteger(num);
+        }
+
+        function isSafeInteger() {
+            var num = Number(numberInput.value);
+            resultOutput.innerHTML = "Number.isSafeInteger(): " + Number.isSafeInteger(num);
+        }
+
+        function parseFloatMethod() {
+            var input = prompt("Enter a string to parse to float: ");
+            resultOutput.innerHTML = "Number.parseFloat(): " + Number.parseFloat(input);
+        }
+
+        function parseIntMethod() {
+            var input = prompt("Enter a string to parse to integer: ");
+            resultOutput.innerHTML = "Number.parseInt(): " + Number.parseInt(input);
+        }
+
+        // Properties
+        function showEPSILON() {
+            resultOutput.innerHTML = "Number.EPSILON: " + Number.EPSILON;
+        }
+
+        function showMAX_VALUE() {
+            resultOutput.innerHTML = "Number.MAX_VALUE: " + Number.MAX_VALUE;
+        }
+
+        function showMIN_VALUE() {
+            resultOutput.innerHTML = "Number.MIN_VALUE: " + Number.MIN_VALUE;
+        }
+
+        function showMAX_SAFE_INTEGER() {
+            resultOutput.innerHTML = "Number.MAX_SAFE_INTEGER: " + Number.MAX_SAFE_INTEGER;
+        }
+
+        function showMIN_SAFE_INTEGER() {
+            resultOutput.innerHTML = "Number.MIN_SAFE_INTEGER: " + Number.MIN_SAFE_INTEGER;
+        }
+
+        function showPOSITIVE_INFINITY() {
+            resultOutput.innerHTML = "Number.POSITIVE_INFINITY: " + Number.POSITIVE_INFINITY;
+        }
+
+        function showNEGATIVE_INFINITY() {
+            resultOutput.innerHTML = "Number.NEGATIVE_INFINITY: " + Number.NEGATIVE_INFINITY;
+        }
+
+        function showNaN() {
+            resultOutput.innerHTML = "NaN: " + NaN;
+        }
+    </script>
+
+</body>
+</html>

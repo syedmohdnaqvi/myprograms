@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // parameters
+        function add(a,b){
+
+            document.write(a+b,"<br>")
+
+        }
+
+
+        add(10,20) // arguments
+
+
+
+        function sub(x,y){
+
+            return x-y
+
+        }
+
+
+
+        answer = sub(10,5)
+
+        document.write(answer)
+
+        function si(p,r,t){
+            return p*r*t/100
+        }
+
+        ans=si(10,5,7)
+
+        document.write(ans,"<br>")
+
+        function swap(a,b){
+            let c=a
+            a=b
+            b=c
+            document.write(a,b,"<br>")
+        }
+
+        swap(78,98)
+
+        function swap2(a,b){
+            a = a + b
+            b  =  a - b
+            a =  a - b
+
+            document.write(a,b,"<br>")
+        }
+
+        swap2(50,100)
+
+        function areaoftriangle(b,h){
+            return b*h/2
+        }
+
+        area=areaoftriangle(10,40)
+
+        document.write(area)
+    </script>
+</body>
+</html>

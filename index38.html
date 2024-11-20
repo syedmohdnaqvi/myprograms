@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with EmailJS</title>
+</head>
+<body>
+    <!-- Form for collecting user input -->
+    <form onsubmit="sendEmail(event)">
+        <input type="text" id="name" placeholder="Enter your name" required><br>
+        <input type="number" id="number" placeholder="Enter your number" required><br>
+        <input type="email" id="email" placeholder="Enter your email" required><br>
+        <input type="submit" id="submit" value="Submit">
+    </form>
+
+    <!-- Result section to show after form submission -->
+    <h1 id="ans"></h1>
+
+    <!-- EmailJS Script for sending emails -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Initialize EmailJS with your user ID
+        (function() {
+            emailjs.init("cWISLUpQ7teroYnr9"); // Replace with your actual EmailJS User ID
+        })();
+
+        // Function to handle form submission and send email via EmailJS
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent form from refreshing the page on submit
+
+            // Capture values from the form fields
+            let name = document.getElementById('name').value;
+            let number = document.getElementById('number').value;
+            let email = document.getElementById('email').value;
+
+            console.log("Form data collected:", { name, number, email });
+
+            // Template parameters to pass to EmailJS
+            const templateParams = {
+                name: name,
+                number: number,
+                email: email
+            };
+
+            console.log("Sending email with template parameters:", templateParams);
+
+            // Send the email using EmailJS with service and template IDs
+            emailjs.send('service_drognfd', 'template_2mavcee', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    document.getElementById('ans').innerHTML = "Email sent successfully!";
+                }, function(error) {
+                    console.error('FAILED...', error);
+                    document.getElementById('ans').innerHTML = "Failed to send email. Please try again.";
+                });
+
+            // Optionally display the user's details on the page
+            document.getElementById('ans').innerHTML = 
+                "I am " + name + ". My number is: " + number + ". My email is: " + email;
+        }
+    </script>
+</body>
+</html>

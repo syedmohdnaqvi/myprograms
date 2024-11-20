@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function si() {
+        p = parseFloat(prompt("Enter principle:"));
+        r = parseFloat(prompt("Enter rate:"));
+        t = parseFloat(prompt("Enter time:"));
+        si = (p * r * t) / 100;
+
+        document.write(si);
+      }
+
+      function ab() {
+        a = 10;
+        b = 20;
+
+        a = b;
+
+        document.write("a=", a, "<br>", "b=", a);
+      }
+
+      function areaofcircle() {
+        const radius = 5;
+        pi = 3.14;
+        areaofcircle = pi * radius * radius;
+        document.write(areaofcircle);
+      }
+
+      function circumcircle() {
+        const radius = 5;
+        pi = 3.14;
+        circumferenceofcircle = 2 * pi * radius;
+        document.write(circumferenceofcircle);
+      }
+
+      function areaofrectangle() {
+        const length = 10;
+        const width = 5;
+        areaofrectangle = length * width;
+        document.write(areaofrectangle);
+      }
+
+      function perimeterrect() {
+        const length = 10;
+        const width = 5;
+
+        perimeterofrectangle = 2 * (length + width);
+
+        document.write(perimeterofrectangle);
+      }
+
+      function areaofsquare() {
+        const side = 6;
+
+        areaofsquare = side * side;
+
+        document.write(areaofsquare);
+      }
+
+      function perimeterofsquare() {
+        const side = 6;
+
+        perimeterofsquare = 4 * side;
+
+        document.write(perimeterofsquare);
+      }
+
+      function areaoftriangle() {
+        const base = 8;
+        const height = 5;
+
+        areaoftriangle = (base * height) / 2;
+
+        document.write(areaoftriangle);
+      }
+
+      function perimeteroftriangle(){
+        const side1 = 7;
+        const side2 = 5;
+        const side3 = 6;
+
+        perimeteroftriangle=side1+side2+side3;
+
+        document.write(perimeteroftriangle);
+      }
+    </script>
+  </body>
+</html>

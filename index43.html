@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling Example</title>
+    <style>
+        #bulbImageContainer, #uppercaseInputContainer, #liveUppercaseInputContainer {
+            display: none;
+            margin-top: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+    </style>
+    <script>
+        // Function to toggle bulb ON and OFF
+        function toggleBulb() {
+            let bulb = document.getElementById("bulbImage");
+            if (bulb.src.includes("bulboff")) {
+                bulb.src = "https://www.w3schools.com/js/pic_bulbon.gif"; // Bulb ON
+            } else {
+                bulb.src = "https://www.w3schools.com/js/pic_bulboff.gif"; // Bulb OFF
+            }
+        }
+
+        // Function for onchange event to convert input to uppercase after Enter
+        function toUppercaseOnChange() {
+            let input = document.getElementById("uppercaseInputField");
+            input.value = input.value.toUpperCase(); // Convert to uppercase on change
+        }
+
+        // Function for onkeyup event to convert input to uppercase live
+        function toUppercaseLive() {
+            let input = document.getElementById("liveUppercaseInputField");
+            input.value = input.value.toUpperCase(); // Convert to uppercase as user types
+        }
+
+        // Function to show and hide sections based on button click
+        function showSection(sectionId) {
+            // Hide all sections
+            document.getElementById("bulbImageContainer").style.display = "none";
+            document.getElementById("uppercaseInputContainer").style.display = "none";
+            document.getElementById("liveUppercaseInputContainer").style.display = "none";
+
+            // Show selected section
+            document.getElementById(sectionId).style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Button to Toggle Bulb On/Off -->
+    <button onclick="showSection('bulbImageContainer')">Toggle Bulb</button>
+    <div id="bulbImageContainer">
+        <img id="bulbImage" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="Bulb" width="100" height="180">
+        <br>
+        <button onclick="toggleBulb()">Switch Bulb</button>
+    </div>
+
+    <br><br>
+
+    <!-- Button to show input for Onchange event (uppercase after Enter) -->
+    <button onclick="showSection('uppercaseInputContainer')">Uppercase on Enter (OnChange)</button>
+    <div id="uppercaseInputContainer">
+        <input type="text" id="uppercaseInputField" onchange="toUppercaseOnChange()" placeholder="Type and press Enter">
+    </div>
+
+    <br><br>
+
+    <!-- Button to show input for Onkeyup event (live uppercase) -->
+    <button onclick="showSection('liveUppercaseInputContainer')">Live Uppercase (OnKeyUp)</button>
+    <div id="liveUppercaseInputContainer">
+        <input type="text" id="liveUppercaseInputField" onkeyup="toUppercaseLive()" placeholder="Type to change to Uppercase">
+    </div>
+
+</body>
+</html>

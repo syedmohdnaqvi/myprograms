@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bd{
+            background-color: pink;
+        }
+        #hd{
+            color: green;
+        }
+    </style>   
+</head>
+<body id="bd">
+    <button id="btn" >Light</button>
+    <h1 id="hd">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium a doloremque ducimus voluptate laboriosam blanditiis repellendus nulla, suscipit neque minima repudiandae hic voluptatem libero non quam eum aliquid quaerat ipsam?</h1>
+
+    <script>
+       document.getElementById('btn').addEventListener('click', function(){
+          a = document.getElementById('bd')
+          b = document.getElementById('hd')
+          c = document.getElementById('btn')
+
+          if(a.style.backgroundColor == "black"){
+            a.style.backgroundColor = "pink"
+            b.style.color = "green"
+            c.innerHTML = "Dark"
+          }
+          else{
+            a.style.backgroundColor = "black"
+            b.style.color = "white"
+            c.innerHTML = "Light"
+          }
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">Do you want to continue?</button>
+    <div id="yesno" style="display: none;">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+
+    <div id="formdiv">
+
+    </div>
+
+    
+
+    <script>
+        document.getElementById('btn1').addEventListener('click',function(){
+           a=document.getElementById('yesno')
+           
+           if(a.style.display=="none"){
+            a.style.display="block"
+            document.getElementById('form').style.display="none"
+            document.getElementById('sorry').style.display="none"
+           }
+           else{
+            a.style.display="none"
+            document.getElementById('form').style.display="none"
+            document.getElementById('sorry').style.display="none"
+           }
+        })
+
+        document.getElementById('yes').addEventListener('click',function(){
+            b=document.getElementById('formdiv')
+
+            b.innerHTML=`<form id="form">
+                 <textarea></textarea>
+                <button>Submit</button>
+                </form>`
+        })
+
+        document.getElementById('no').addEventListener('click',function(){
+            b=document.getElementById('formdiv')
+
+            b.innerHTML=`<h1 id="sorry">Sorry!</h1>`
+        })
+
+        
+    </script>
+</body>
+</html>

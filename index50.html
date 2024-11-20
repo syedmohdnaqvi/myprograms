@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Array Methods Demonstration</h2>
+    <input type="text" id="arrayInput" placeholder="Enter array elements (comma-separated)">
+    <br>
+
+    <!-- Array Methods Buttons -->
+    <button onclick="performPush()">push()</button>
+    <button onclick="performPop()">pop()</button>
+    <button onclick="performShift()">shift()</button>
+    <button onclick="performUnshift()">unshift()</button>
+    <button onclick="performConcat()">concat()</button>
+    <button onclick="performJoin()">join()</button>
+    <button onclick="performReverse()">reverse()</button>
+    <button onclick="performSort()">sort()</button>
+    <button onclick="performSlice()">slice()</button>
+    <button onclick="performSplice()">splice()</button>
+    <button onclick="performMap()">map()</button>
+    <button onclick="performFilter()">filter()</button>
+    <button onclick="performFind()">find()</button>
+    <button onclick="performFindIndex()">findIndex()</button>
+    <button onclick="performIncludes()">includes()</button>
+    <button onclick="performIndexOf()">indexOf()</button>
+    <button onclick="performForEach()">forEach()</button>
+
+    <h3 id="output">Output will appear here</h3>
+
+    <script>
+        // Helper function to parse the input array
+        function getArrayInput() {
+            const input = document.getElementById("arrayInput").value;
+            return input.split(',').map(item => item.trim());
+        }
+
+        function updateOutput(result) {
+            document.getElementById("output").innerHTML = "Result: " + JSON.stringify(result);
+        }
+
+        // Array Methods Functions
+
+        function performPush() {
+            let arr = getArrayInput();
+            let newItem = prompt("Enter the item to push:");
+            arr.push(newItem);
+            updateOutput(arr);
+        }
+
+        function performPop() {
+            let arr = getArrayInput();
+            arr.pop();
+            updateOutput(arr);
+        }
+
+        function performShift() {
+            let arr = getArrayInput();
+            arr.shift();
+            updateOutput(arr);
+        }
+
+        function performUnshift() {
+            let arr = getArrayInput();
+            let newItem = prompt("Enter the item to unshift:");
+            arr.unshift(newItem);
+            updateOutput(arr);
+        }
+
+        function performConcat() {
+            let arr = getArrayInput();
+            let arr2 = prompt("Enter second array (comma-separated):").split(',').map(item => item.trim());
+            let result = arr.concat(arr2);
+            updateOutput(result);
+        }
+
+        function performJoin() {
+            let arr = getArrayInput();
+            let separator = prompt("Enter a separator:");
+            let result = arr.join(separator);
+            updateOutput(result);
+        }
+
+        function performReverse() {
+            let arr = getArrayInput();
+            arr.reverse();
+            updateOutput(arr);
+        }
+
+        function performSort() {
+            let arr = getArrayInput();
+            arr.sort();
+            updateOutput(arr);
+        }
+
+        function performSlice() {
+            let arr = getArrayInput();
+            let start = parseInt(prompt("Enter the start index:"));
+            let end = parseInt(prompt("Enter the end index (optional, leave empty for till end):"));
+            let result = (isNaN(end)) ? arr.slice(start) : arr.slice(start, end);
+            updateOutput(result);
+        }
+
+        function performSplice() {
+            let arr = getArrayInput();
+            let start = parseInt(prompt("Enter the start index:"));
+            let deleteCount = parseInt(prompt("Enter number of elements to delete:"));
+            let newItem = prompt("Enter item(s) to add (optional, leave empty to skip):").split(',');
+            let result = arr.splice(start, deleteCount, ...newItem);
+            updateOutput(arr);
+        }
+
+        function performMap() {
+            let arr = getArrayInput();
+            let result = arr.map(item => item.toUpperCase());  // Example: converts all items to uppercase
+            updateOutput(result);
+        }
+
+        function performFilter() {
+            let arr = getArrayInput();
+            let result = arr.filter(item => item.length > 3);  // Example: filter items with length > 3
+            updateOutput(result);
+        }
+
+        function performFind() {
+            let arr = getArrayInput();
+            let result = arr.find(item => item.length > 3);  // Example: find the first item with length > 3
+            updateOutput(result);
+        }
+
+        function performFindIndex() {
+            let arr = getArrayInput();
+            let result = arr.findIndex(item => item.length > 3);  // Example: find index of first item with length > 3
+            updateOutput(result);
+        }
+
+        function performIncludes() {
+            let arr = getArrayInput();
+            let item = prompt("Enter the item to check:");
+            let result = arr.includes(item);
+            updateOutput(result);
+        }
+
+        function performIndexOf() {
+            let arr = getArrayInput();
+            let item = prompt("Enter the item to find its index:");
+            let result = arr.indexOf(item);
+            updateOutput(result);
+        }
+
+        function performForEach() {
+            let arr = getArrayInput();
+            let result = [];
+            arr.forEach((item, index) => result.push("Item " + index + ": " + item)); // Example: label each item
+            updateOutput(result);
+        }
+
+    </script>
+</body>
+</html>

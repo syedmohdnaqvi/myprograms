@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+        <button id="do">Do you have any query?</button>
+    <br><br>
+        <div style="display: none;" id="yn">
+            <button id="frm">Yes</button>
+
+            <button id="thx">No</button>
+     
+        </div>
+
+        <div id="data">
+
+           
+
+            
+        </div>
+
+
+
+
+        <script>
+            document.getElementById('do').addEventListener('click',function(){
+                a = document.getElementById('yn')
+
+                if(a.style.display == 'none'){
+                    a.style.display = 'block'
+                document.getElementById('fff').style.display = 'none'
+                document.getElementById('ttt').style.display = 'none'
+                
+            }else{
+                a.style.display = 'none'
+                document.getElementById('ttt').style.display = 'none'
+                document.getElementById('fff').style.display = 'none'
+                }
+            })
+
+
+            document.getElementById('frm').addEventListener('click',function(){
+                b = document.getElementById('data')
+
+                b.innerHTML = ` <form id="fff" >
+                <textarea name="" id=""></textarea>
+                <br>
+                <input type="submit" value="submit">
+            </form>`
+                
+            })
+
+
+            document.getElementById('thx').addEventListener('click',function(){
+                b = document.getElementById('data')
+
+                b.innerHTML = `
+<h1 id='ttt'>Thank You! Marja nikl Bhaag</h1>
+            `
+                
+            })
+        </script>
+</body>
+</html>

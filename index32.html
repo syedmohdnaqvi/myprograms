@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn1" onclick="show1()">Lamborghini</button>
+    <div id="threebtn" style="display: none">
+      <button id="urus" onclick="urus()">Lamborghini Urus</button>
+      <img
+        src="images/Lamborghini-Urus.png"
+        alt=""
+        style="display: none; width: 200px; height: 300px"
+        id="img1"
+      />
+      <p id="p1" style="display: none">3700 AED</p>
+      <button id="bn1" style="display: none">Book Now</button>
+      <button id="huracan" onclick="huracan()">Lamborghini Huracan</button>
+      <img
+        src="images/Lamborghini-Huracan.png"
+        alt=""
+        style="display: none; width: 200px; height: 300px"
+        id="img2"
+      />
+      <p id="p2" style="display: none">3500 AED</p>
+      <button id="bn2" style="display: none">Book Now</button>
+      <button id="aventador" onclick="aventador()">
+        Lamborghini Aventador
+      </button>
+      <img
+        src="images/Lamborghini-Aventador.png"
+        alt=""
+        style="display: none; width: 200px; height: 300px"
+        id="img3"
+      />
+      <p id="p3" style="display: none">5000 AED</p>
+      <button id="bn3" style="display: none">
+        <a href="https://wa.me/+918979242529"> Book Now</a>
+      </button>
+    </div>
+
+    <script>
+      function show1() {
+        document.getElementById("threebtn").style.display = "block";
+      }
+      function urus() {
+        document.getElementById("img1").style.display = "block";
+        document.getElementById("p1").style.display = "block";
+        document.getElementById("bn1").style.display = "block";
+      }
+      function huracan() {
+        document.getElementById("img2").style.display = "block";
+        document.getElementById("p2").style.display = "block";
+        document.getElementById("bn2").style.display = "block";
+      }
+      function aventador() {
+        document.getElementById("img3").style.display = "block";
+        document.getElementById("p3").style.display = "block";
+        document.getElementById("bn3").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

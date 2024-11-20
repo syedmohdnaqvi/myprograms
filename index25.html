@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="a">
+    <input type="number" id="b">
+
+    <button id="and" onclick="and()">&</button>
+    <button id="or" onclick="or()">|</button>
+    <br><br>
+    <input type="text" id="answer" readonly>
+    <br><br>
+    <button id="not" onclick="not()">!</button>
+
+    <input type="text" id="ans2" readonly>
+
+
+    <script>
+        function and(){
+            x=Number(document.getElementById('a').value)
+            y=Number(document.getElementById('b').value)
+
+            document.getElementById('answer').value=x&y
+        }
+
+        function or(){
+            x=Number(document.getElementById('a').value)
+            y=Number(document.getElementById('b').value)
+
+            document.getElementById('answer').value=x|y
+        }
+
+        function not(){
+            p=Number(document.getElementById('answer').value)
+
+            document.getElementById('ans2').value=-(p+1)
+        }
+    </script>
+</body>
+</html>

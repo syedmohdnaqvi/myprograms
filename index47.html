@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String & Number Methods</title>
+</head>
+<body>
+    <input type="text" id="inputtext" placeholder="Enter some text"><br><br>
+    <input type="number" id="inputnumber" placeholder="Enter a number"><br><br>
+
+    <button onclick="indexOfText()">indexOf()</button>
+    <button onclick="lastIndexOfText()">lastIndexOf()</button>
+    <button onclick="searchText()">search()</button>
+    <button onclick="matchText()">match()</button>
+    <button onclick="matchAllText()">matchAll()</button>
+    <button onclick="includesText()">includes()</button>
+    <button onclick="startsWithText()">startsWith()</button>
+    <button onclick="endsWithText()">endsWith()</button>
+    <button onclick="toStringText()">toString()</button>
+    <button onclick="toExponentialText()">toExponential()</button>
+    <button onclick="toFixedText()">toFixed()</button>
+    <button onclick="toPrecisionText()">toPrecision()</button>
+    <button onclick="valueOfText()">valueOf()</button>
+
+    <h1 id="ans"></h1>
+
+    <script>
+        const textInput = document.getElementById('inputtext');
+        const numberInput = document.getElementById('inputnumber');
+        const output = document.getElementById('ans');
+
+        // String Methods
+        function indexOfText() {
+            var str = textInput.value;
+            var searchStr = prompt("Enter text to find index: ");
+            output.innerHTML = 'indexOf("' + searchStr + '"): ' + str.indexOf(searchStr);
+        }
+
+        function lastIndexOfText() {
+            var str = textInput.value;
+            var searchStr = prompt("Enter text to find last index: ");
+            output.innerHTML = 'lastIndexOf("' + searchStr + '"): ' + str.lastIndexOf(searchStr);
+        }
+
+        function searchText() {
+            var str = textInput.value;
+            var searchStr = prompt("Enter text/regex to search: ");
+            output.innerHTML = 'search("' + searchStr + '"): ' + str.search(searchStr);
+        }
+
+        function matchText() {
+            var str = textInput.value;
+            var regex = prompt("Enter regex for match: ");
+            output.innerHTML = 'match(' + regex + '): ' + str.match(new RegExp(regex));
+        }
+
+        function matchAllText() {
+            var str = textInput.value;
+            var regex = prompt("Enter regex for matchAll: ");
+            var matches = [...str.matchAll(new RegExp(regex, 'g'))];
+            output.innerHTML = 'matchAll(' + regex + '): ' + matches.map(function(match) { return match[0]; }).join(', ');
+        }
+
+        function includesText() {
+            var str = textInput.value;
+            var searchStr = prompt("Enter text to check inclusion: ");
+            output.innerHTML = 'includes("' + searchStr + '"): ' + str.includes(searchStr);
+        }
+
+        function startsWithText() {
+            var str = textInput.value;
+            var searchStr = prompt("Enter text to check start: ");
+            output.innerHTML = 'startsWith("' + searchStr + '"): ' + str.startsWith(searchStr);
+        }
+
+        function endsWithText() {
+            var str = textInput.value;
+            var searchStr = prompt("Enter text to check end: ");
+            output.innerHTML = 'endsWith("' + searchStr + '"): ' + str.endsWith(searchStr);
+        }
+
+        // Number Methods
+        function toStringText() {
+            var num = Number(numberInput.value);
+            output.innerHTML = 'toString(): ' + num.toString();
+        }
+
+        function toExponentialText() {
+            var num = Number(numberInput.value);
+            var fractionDigits = prompt("Enter number of fractional digits for toExponential: ");
+            output.innerHTML = 'toExponential(' + fractionDigits + '): ' + num.toExponential(fractionDigits);
+        }
+
+        function toFixedText() {
+            var num = Number(numberInput.value);
+            var digits = prompt("Enter number of digits for toFixed: ");
+            output.innerHTML = 'toFixed(' + digits + '): ' + num.toFixed(digits);
+        }
+
+        function toPrecisionText() {
+            var num = Number(numberInput.value);
+            var precision = prompt("Enter precision for toPrecision: ");
+            output.innerHTML = 'toPrecision(' + precision + '): ' + num.toPrecision(precision);
+        }
+
+        function valueOfText() {
+            var num = Number(numberInput.value);
+            output.innerHTML = 'valueOf(): ' + num.valueOf();
+        }
+    </script>
+</body>
+</html>

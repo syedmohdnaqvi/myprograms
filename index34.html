@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=prompt("Enter a number")
+        let b=prompt("Enter another number")
+        let c
+
+        const numbers = {
+            one:a,
+            two:b,
+            three:c
+        }
+
+        numbers.three=numbers.one
+        numbers.one=numbers.two
+        numbers.two=numbers.three
+
+        document.write("a=",numbers.one,"<br>","b=",numbers.two)
+    </script>
+</body>
+</html>

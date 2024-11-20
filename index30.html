@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <input type="number" id="inp1">
+    <input type="number" id="inp2">
+    <br>
+
+    <button id="plus" onclick="calc('+')">Plus</button>
+    <button id="minus" onclick="calc('-')">Minus</button>
+    <button id="multiply" onclick="calc('*')">Multiply</button>
+    <button id="divide" onclick="calc('/')">Divide</button>
+    <button id="mod" onclick="calc('%')">Mod</button>
+    <button id="increment" onclick="calc('++')">Increment</button>
+    <button id="decrement" onclick="calc('--')">Decrement</button>
+    <button id="doubleequalto" onclick="calc('==')">Double Equal</button>
+    <button id="greaterthanequalto" onclick="calc('>=')">Greater Than or Equal</button>
+    <button id="lessthanequalto" onclick="calc('<=')">Less Than or Equal</button>
+    <button id="notequalto" onclick="calc('!=')">Not Equal</button>
+    <button id="plusequalto" onclick="calc('+=')">Plus Equal</button>
+    <button id="minusequalto" onclick="calc('-=')">Minus Equal</button>
+    <button id="multiplyequalto" onclick="calc('*=')">Multiply Equal</button>
+    <button id="divideequalto" onclick="calc('/=')">Divide Equal</button>
+    <br>
+
+    <h1 id="ans"></h1>
+
+    <script>
+        function calc(operator) {
+            let x = Number(document.getElementById('inp1').value);
+            let y = Number(document.getElementById('inp2').value);
+            let result = document.getElementById('ans');
+
+            switch (operator) {
+                case '+':
+                    result.innerHTML = x + y;
+                    break;
+                case '-':
+                    result.innerHTML = x - y;
+                    break;
+                case '*':
+                    result.innerHTML = x * y;
+                    break;
+                case '/':
+                    result.innerHTML = (y !== 0) ? x / y : 'Cannot divide by zero';
+                    break;
+                case '%':
+                    result.innerHTML = x % y;
+                    break;
+                case '++':
+                    result.innerHTML = ++x;
+                    break;
+                case '--':
+                    result.innerHTML = --x;
+                    break;
+                case '==':
+                    result.innerHTML = (x == y);
+                    break;
+                case '<=':
+                    result.innerHTML = (x <= y);
+                    break;
+                case '>=':
+                    result.innerHTML = (x >= y);
+                    break;
+                case '!=':
+                    result.innerHTML = (x != y);
+                    break;
+                case '+=':
+                    x += y;
+                    result.innerHTML = x;
+                    break;
+                case '-=':
+                    x -= y;
+                    result.innerHTML = x;
+                    break;
+                case '*=':
+                    x *= y;
+                    result.innerHTML = x;
+                    break;
+                case '/=':
+                    if (y !== 0) {
+                        x /= y;
+                        result.innerHTML = x;
+                    } else {
+                        result.innerHTML = 'Cannot divide by zero';
+                    }
+                    break;
+                default:
+                    result.innerHTML = 'Invalid operator';
+            }
+        }
+    </script>
+
+</body>
+</html>

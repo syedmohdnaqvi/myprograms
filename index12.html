@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+            Enter INR: <input id="india" oninput="inr()" type="number">
+            <br><br>
+            Enter USD: <input id="usa" oninput="usd()" type="number">
+
+
+
+
+        <script>
+            // arithmatic operator
+
+            // +,-,*,/,**,%
+
+            
+            function inr(){
+                a = Number(document.getElementById('india').value)
+
+                ans = a/83.98
+
+                document.getElementById('usa').value = ans
+            }
+
+            
+            function usd(){
+                a1 = Number(document.getElementById('usa').value)
+
+                ans2 = a1*83.98
+
+                document.getElementById('india').value = ans2
+
+            }
+
+            </script>
+</body>
+</html>

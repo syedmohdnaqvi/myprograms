@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All DOM Events Example</title>
+  <script>
+    // onload and onunload events
+    function onPageLoad() {
+      console.log('Page has loaded.');
+      alert('Welcome to the DOM Events Example!');
+    }
+
+    function onPageUnload() {
+      console.log('Page is unloading.');
+    }
+  </script>
+</head>
+<body onload="onPageLoad()" onunload="onPageUnload()">
+  <h1>Explore DOM Events</h1>
+  
+  <!-- onclick -->
+  <button id="clickButton" onclick="onClick()">Click Me</button>
+
+  <!-- onmouseover and onmouseout -->
+  <div id="hoverArea" 
+       onmouseover="onMouseOver()" 
+       onmouseout="onMouseOut()" 
+       style="width: 200px; height: 100px; background-color: lightblue; margin-top: 10px;">
+    Hover Area
+  </div>
+
+  <!-- onmousedown and onmouseup -->
+  <div id="mouseArea" 
+       onmousedown="onMouseDown()" 
+       onmouseup="onMouseUp()" 
+       style="width: 200px; height: 100px; background-color: lightgreen; margin-top: 10px;">
+    Mouse Down/Up Area
+  </div>
+
+  <!-- onfocus and onblur -->
+  <input type="text" id="textInput" onfocus="onFocus()" onblur="onBlur()" placeholder="Focus on me!">
+
+  <!-- onchange -->
+  <select id="dropdown" onchange="onChange()">
+    <option value="">Select an option</option>
+    <option value="Option 1">Option 1</option>
+    <option value="Option 2">Option 2</option>
+    <option value="Option 3">Option 3</option>
+  </select>
+
+  <!-- onkeypress, onkeydown, and onkeyup -->
+  <input type="text" id="keyInput" 
+         onkeypress="onKeyPress(event)" 
+         onkeydown="onKeyDown(event)" 
+         onkeyup="onKeyUp(event)" 
+         placeholder="Type something...">
+
+  <script>
+    // onclick
+    function onClick() {
+      console.log('Button clicked.');
+      alert('Button clicked!');
+    }
+
+    // onmouseover and onmouseout
+    function onMouseOver() {
+      console.log('Mouse is over the hover area.');
+    }
+
+    function onMouseOut() {
+      console.log('Mouse left the hover area.');
+    }
+
+    // onmousedown and onmouseup
+    function onMouseDown() {
+      console.log('Mouse button pressed down on the green area.');
+    }
+
+    function onMouseUp() {
+      console.log('Mouse button released on the green area.');
+    }
+
+    // onfocus and onblur
+    function onFocus() {
+      console.log('Input field is focused.');
+    }
+
+    function onBlur() {
+      console.log('Input field lost focus.');
+    }
+
+    // onchange
+    function onChange() {
+      const dropdown = document.getElementById('dropdown');
+      console.log(`Dropdown changed to: ${dropdown.value}`);
+    }
+
+    // onkeypress, onkeydown, and onkeyup
+    function onKeyPress(event) {
+      console.log(`Key pressed: ${event.key}`);
+    }
+
+    function onKeyDown(event) {
+      console.log(`Key down: ${event.key}`);
+    }
+
+    function onKeyUp(event) {
+      console.log(`Key up: ${event.key}`);
+    }
+
+    on
+  </script>
+</body>
+</html>

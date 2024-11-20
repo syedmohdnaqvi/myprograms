@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getCarPrice(car) {
+            let price;
+        
+            switch(car.toLowerCase()) {
+                case 'toyota':
+                    price = "$30,000";
+                    break;
+                case 'honda':
+                    price = "$28,000";
+                    break;
+                case 'bmw':
+                    price = "$55,000";
+                    break;
+                case 'mercedes':
+                    price = "$60,000";
+                    break;
+                case 'audi':
+                    price = "$50,000";
+                    break;
+                default:
+                    price = "not available";
+                    break;
+            }
+        
+            if (price !== "not available") {
+                console.log(`Car: ${car}, Price: ${price}`);
+            } else {
+                console.log(`Sorry, the car "${car}" is not available.`);
+            }
+        }
+        
+        // Example usage
+        getCarPrice('BMW');
+        getCarPrice('Toyota');
+        getCarPrice('Ferrari');
+</script>    
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- https://www.w3schools.com/js/pic_bulboff.gif -->
+
+    <!-- https://www.w3schools.com/js/pic_bulbon.gif -->
+    
+    <img id="off" src="https://www.w3schools.com/js/pic_bulboff.gif" alt=""> <br>
+    <img id="on" src="https://www.w3schools.com/js/pic_bulbon.gif" style="display: none;" alt=""> <br>
+    <br>
+
+    <button id="bulb">Please Switch On</button>
+    <script>
+        // a = 10
+        // b = 20
+
+        // document.write(a<b,"<br>")
+        // document.write(a>b,"<br>")
+        // document.write(a<=b,"<br>")
+        // document.write(a>=b,"<br>")
+
+        // document.write(10=="10","<br>") // == check only data(value)
+        
+        // document.write(10===20,"<br>") // === check both data and data type
+
+        document.getElementById('bulb').addEventListener('click',function(){
+
+        f = document.getElementById('off')
+        n = document.getElementById('on')
+        b = document.getElementById('bulb')
+            
+        if(f.style.display == 'none'){
+            f.style.display = 'block'
+            n.style.display = 'none'
+            b.innerHTML = 'Please Switch On'
+            
+        }else{
+            f.style.display = 'none'
+            n.style.display = 'block'
+            b.innerHTML = 'Please Switch Off'
+        }
+
+
+        })
+
+
+
+
+
+
+    </script>
+</body>
+</html>

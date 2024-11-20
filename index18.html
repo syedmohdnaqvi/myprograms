@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="off" src="https://www.w3schools.com/js/pic_bulboff.gif" alt=""> <br>
+    <img id="on" src="https://www.w3schools.com/js/pic_bulbon.gif" style="display: none;" alt=""> <br>
+    <button id="switch">Turn on</button>
+
+    <script>
+        document.getElementById('switch').addEventListener('click',function(){
+            a=document.getElementById('off')
+            b=document.getElementById('on')
+            c=document.getElementById('switch')
+
+            if(a.style.display=="none"){
+                a.style.display="block"
+                b.style.display="none"
+                c.innerHTML="Turn off"
+            }else
+            {
+                a.style.display="none"
+                b.style.display="block"
+                c.innerHTML="Turn on"
+                b.style.marginTop="-20px"
+            }
+        })
+    </script>
+</body>
+</html>

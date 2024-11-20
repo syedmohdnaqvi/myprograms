@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bd{
+            background-color: teal;
+        }
+        #heading{
+            color: white;
+        }
+    </style>
+</head>
+<body id="bd">
+    <button id="btn">Dark</button>
+    <h1 id="heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam excepturi repudiandae, obcaecati voluptates accusamus facere laborum nostrum error laudantium iste.</h1>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+           const btn = document.getElementById('btn');
+           const body = document.getElementById('bd');
+           const heading = document.getElementById('heading');
+
+           if (btn.innerHTML === "Dark") {
+               btn.innerHTML = "Light";
+               body.style.backgroundColor = "yellow";
+               heading.style.color = "black";
+           } else {
+               btn.innerHTML = "Dark";
+               body.style.backgroundColor = "teal";
+               heading.style.color = "white";
+           }
+        });
+    </script>
+</body>
+</html>

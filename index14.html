@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ENTER INR: <input type="number" id="india" oninput="inr()" value="">
+
+    ENTER YEN: <input type="number" id="japan" oninput="yen()">
+    
+
+    <script>
+        function inr(){
+            a=Number(document.getElementById('india').value)
+
+            ans=a/0.59
+
+            document.getElementById('japan').value = ans
+        }
+
+        function yen(){
+            a2=Number(document.getElementById('japan').value)
+
+            ans2=a2*0.59
+
+            document.getElementById('india').value=ans2
+        }
+    </script>
+</body>
+</html>

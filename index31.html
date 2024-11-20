@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="input1">
+    <input type="number" id="input2">
+
+    <br>
+
+    <button id="plus" onclick="plus()">Plus</button>
+    <button id="minus" onclick="minus()">Minus</button>
+    <button id="multiply" onclick="multiply()">Multiply</button>
+    <button id="divide" onclick="divide()">Divide</button>
+    <button id="mod" onclick="mod()">Mod</button>
+    <button id="exponentiation" onclick="exponentiation()">Exponentiation</button>
+    <button id="preincrement" onclick="preincrement()">Preincrement</button>
+    <button id="postincrement" onclick="postincrement()">Postincrement</button>
+    <button id="predecrement" onclick="predecrement()">Predecrement</button>
+    <button id="postdecrement" onclick="postdecrement()">Postdecrement</button>
+    <button id="equalto" onclick="equalto()">Equalto</button>
+    <button id="plusequalto" onclick="plusequalto()">PlusEqualto</button>
+    <button id="minusequalto" onclick="minusequalto()">MinusEqualto</button>
+    <button id="multiplyequalto" onclick="multiplyequalto()">MultiplyEqualto</button>
+    <button id="divideequalto" onclick="divideequalto()">DivideEqualto</button>
+    <button id="modequalto" onclick="modequalto()">ModEqualto</button>
+    <button id="doubleequalto" onclick="doubleequalto()">DoubleEqualto</button>
+    <button id="tripleequalto" onclick="tripleequalto()">TripleEqualto</button>
+    <button id="notequalto" onclick="notequalto()">NotEqualto</button>
+    <button id="notdoubleequalto" onclick="notdoubleequalto()">NotDoubleEqualto</button>
+    <button id="greaterthan" onclick="greaterthan()">Greaterthan</button>
+    <button id="lessthan" onclick="lessthan()">Lessthan</button>
+    <button id="greaterthanequalto" onclick="greaterthanequalto()">GreaterThanEqualto</button>
+    <button id="lessthanequalto" onclick="lessthanequalto()">LessThanEqualto</button>
+    <button id="logicaland" onclick="logicaland()">LogicalAnd</button>
+    <button id="logicalor" onclick="logicalor()">LogicalOr</button>
+    <button id="logicalnot" onclick="logicalnot()">LogicalNot</button>
+    <button id="bitwiseand" onclick="bitwiseand()">BitwiseAnd</button>
+    <button id="bitwiseor" onclick="bitwiseor()">BitwiseOr</button>
+    <button id="bitwisenot" onclick="bitwisenot()">BitwiseNot</button>
+    <button id="xor" onclick="xor()">Xor</button>
+    <button id="leftshift" onclick="leftshift()">LeftShift</button>
+    <button id="rightshift" onclick="rightshift()">RightShift</button>
+
+    <br>
+
+    <h1 id="answer"></h1>
+
+    <script>
+        function plus(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x+y
+        }
+        function minus(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x-y
+        }
+        function multiply(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x*y
+        }
+        function divide(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x/y
+        }
+        function mod(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x%y
+        }
+        function exponentiation(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x**y
+        }
+        function preincrement(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=++x
+        }
+        function postincrement(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x++
+        }
+        function predecrement(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=--x
+        }
+        function postdecrement(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x--
+        }
+        function equalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x=y
+        }
+        function plusequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x+=y
+        }
+        function minusequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x-=y
+        }
+        function multiplyequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x*=y
+        }
+        function divideequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x/=y
+        }
+        function modequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x%=y
+        }
+        function doubleequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x==y
+        }
+        function tripleequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x===y
+        }
+        function notequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x!=y
+        }
+        function notdoubleequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x!==y
+        }
+        function greaterthan(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x>y
+        }
+        function lessthan(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x<y
+        }
+        function greaterthanequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x>=y
+        }
+        function lessthanequalto(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x<=y
+        }
+        function logicaland(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x&&y
+        }
+        function logicalor(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x||y
+        }
+        function logicalnot(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=!x
+        }
+        function bitwiseand(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x&y
+        }
+        function bitwiseor(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x|y
+        }
+        function bitwisenot(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=~x
+        }
+        function xor(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x^y
+        }
+        function leftshift(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x<<y
+        }
+        function rightshift(){
+            x=Number(document.getElementById('input1').value)
+            y=Number(document.getElementById('input2').value)
+
+            document.getElementById('answer').innerHTML=x>>y
+        }
+
+    </script>
+</body>
+</html>

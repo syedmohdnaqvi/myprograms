@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js</title>
+</head>
+<body>
+    <p id="pone">Our Services</p>
+
+    <div id="section">
+        <div id="left">
+           <img src="" alt="" id="image">
+        </div>
+        <div id="right">
+            <p id="pheading"></p>
+           <p id="pright"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('pone').style.textAlign="center";
+        document.getElementById('pone').style.fontSize="30px";
+        document.getElementById('section').style.width="100%";
+        document.getElementById('section').style.height="400px";
+        document.getElementById('section').style.display="flex";
+        document.getElementById('section').style.justifyContent="center";
+        document.getElementById('section').style.alignItems="center";
+        document.getElementById('section').style.gap="30px";
+        document.getElementById('left').style.width="50%";
+        
+        a  = document.getElementById('right')
+        
+        a.style.width="50%";
+        document.getElementById('image').src = "images/pexels-annamw-1120162.jpg";
+        document.getElementById('image').style.height = "100%"
+        document.getElementById('image').style.width = "100%"
+        document.getElementById('pheading').innerHTML="Party Booking";
+        document.getElementById('pheading').style.textAlign="center";
+        document.getElementById('pheading').style.fontWeight="bold";
+        document.getElementById('pheading').style.fontSize="25px";
+        document.getElementById('pright').innerHTML="We help book the best places for parties in Dubai, from luxury hotels to cozy cafes and stylish restaurants. Our strong connections with top venues mean you get the best rates and top service. We make sure your party is fun and unforgettable. Whether it’s a big celebration or a small gathering, we handle all the details. Let us make your event in Dubai special and stress-free.";
+        
+        
+
+    </script>
+</body>
+</html>

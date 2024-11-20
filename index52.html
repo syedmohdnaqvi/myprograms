@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sort Methods Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Enter Array (Comma-Separated):</h2>
+    <input type="text" id="arrayInput" placeholder="e.g., 5, 2, 8, 3, 9">
+    <br>
+
+    <button onclick="sortArray()">Array Sort</button>
+    <button onclick="reverseArray()">Array Reverse</button>
+    <button onclick="toSortedArray()">Array toSorted</button>
+    <button onclick="toReversedArray()">Array toReversed</button>
+    <button onclick="numericSort()">Numeric Sort</button>
+    <button onclick="randomSort()">Random Sort</button>
+    <button onclick="mathMin()">Math.min()</button>
+    <button onclick="mathMax()">Math.max()</button>
+    <button onclick="homeMadeMin()">Home made Min</button>
+    <button onclick="homeMadeMax()">Home made Max</button>
+
+    <h1 id="ans">Result will appear here</h1>
+
+    <script>
+        // Helper function to parse the array from input
+        function getArrayInput() {
+            const input = document.getElementById("arrayInput").value;
+            return input.split(',').map(item => parseFloat(item.trim()));
+        }
+
+        // Helper function to update the result
+        function updateResult(result) {
+            document.getElementById('ans').innerHTML = "Result: " + result;
+        }
+
+        // Array Sort (Alphabetical sort for strings or lexicographical for numbers as strings)
+        function sortArray() {
+            let arr = getArrayInput();
+            let result = arr.sort();
+            updateResult(result);
+        }
+
+        // Array Reverse
+        function reverseArray() {
+            let arr = getArrayInput();
+            let result = arr.reverse();
+            updateResult(result);
+        }
+
+        // Array toSorted (Shallow copy with sorted array)
+        function toSortedArray() {
+            let arr = getArrayInput();
+            let result = [...arr].sort();  // Creating a shallow copy before sorting
+            updateResult(result);
+        }
+
+        // Array toReversed (Shallow copy with reversed array)
+        function toReversedArray() {
+            let arr = getArrayInput();
+            let result = [...arr].reverse();  // Creating a shallow copy before reversing
+            updateResult(result);
+        }
+
+        // Numeric Sort (sort numbers properly)
+        function numericSort() {
+            let arr = getArrayInput();
+            let result = arr.sort((a, b) => a - b); // Proper numeric sort
+            updateResult(result);
+        }
+
+        // Random Sort (Shuffles the array)
+        function randomSort() {
+            let arr = getArrayInput();
+            let result = arr.sort(() => Math.random() - 0.5); // Shuffle array randomly
+            updateResult(result);
+        }
+
+        // Math.min() (Find the minimum value using built-in Math.min)
+        function mathMin() {
+            let arr = getArrayInput();
+            let result = Math.min(...arr); // Spread array into Math.min()
+            updateResult(result);
+        }
+
+        // Math.max() (Find the maximum value using built-in Math.max)
+        function mathMax() {
+            let arr = getArrayInput();
+            let result = Math.max(...arr); // Spread array into Math.max()
+            updateResult(result);
+        }
+
+        // Home made Min (Custom function to find minimum)
+        function homeMadeMin() {
+            let arr = getArrayInput();
+            let result = arr.reduce((min, current) => current < min ? current : min, arr[0]);
+            updateResult(result);
+        }
+
+        // Home made Max (Custom function to find maximum)
+        function homeMadeMax() {
+            let arr = getArrayInput();
+            let result = arr.reduce((max, current) => current > max ? current : max, arr[0]);
+            updateResult(result);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="syed" onclick="clickhere()">hero</button>
+    <button onclick="hidehero()">Hero Hide</button>
+    <button id="btn1" onclick="image1()">Salman khan</button>
+    <button id="hidebtn1" onclick="hide1()">Hide Salman Khan</button>
+    <img src="images/salmankhan.jpg" alt="" id="img1">
+    <button id="btn2" onclick="image2()">Shahrukh khan</button>
+    <button id="hidebtn2" onclick="hide2()">Hide Shahrukh Khan</button>
+    <img src="images/shahrukhkhan.webp" alt="" id="img2">
+    <button id="btn3" onclick="image3()">Aamir khan</button>
+    <button id="hidebtn3" onclick="hide3()">Hide Aamir Khan</button>
+    <img src="images/aamirkhan.avif" alt="" id="img3">
+    <button id="btn4" onclick="image4()">Saif Ali khan</button>
+    <button id="hidebtn4" onclick="hide4()">Hide Saif Ali Khan</button>
+    <img src="images/saifalikhan.jpeg" alt="" id="img4">
+
+    <script>
+        document.getElementById('btn1').style.display="none";
+        document.getElementById('btn2').style.display="none";
+        document.getElementById('btn3').style.display="none";
+        document.getElementById('btn4').style.display="none";
+        document.getElementById('img1').style.display="none";
+        document.getElementById('img2').style.display="none";
+        document.getElementById('img3').style.display="none";
+        document.getElementById('img4').style.display="none";
+        
+
+        function clickhere(){
+            document.getElementById('btn1').style.display="block";
+            document.getElementById('btn2').style.display="block";
+            document.getElementById('btn3').style.display="block";
+            document.getElementById('btn4').style.display="block";
+        }
+
+        function image1(){
+            document.getElementById('img1').style.display="block";
+        }
+
+        function image2(){
+            document.getElementById('img2').style.display="block";
+        }
+
+        function image3(){
+            document.getElementById('img3').style.display="block";
+        }
+
+        function image4(){
+            document.getElementById('img4').style.display="block";
+        }
+
+        function hidehero(){
+            document.getElementById('syed').style.display="none";
+            document.getElementById('btn1').style.display="none";
+            document.getElementById('btn2').style.display="none";
+            document.getElementById('btn3').style.display="none";
+            document.getElementById('btn4').style.display="none";
+        }
+
+        function hide1(){
+            document.getElementById('img1').style.display="none"
+        }
+
+        function hide2(){
+            document.getElementById('img2').style.display="none"
+        }
+
+        function hide3(){
+            document.getElementById('img3').style.display="none"
+        }
+
+        function hide4(){
+            document.getElementById('img4').style.display="none"
+        }
+    </script>
+</body>
+</html>

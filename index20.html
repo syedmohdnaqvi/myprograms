@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input id="a"  type="number" placeholder="Enter a= "> 
+
+    <input id="c" type="text" placeholder="ENter comparisions">
+    
+    <input id="b" type="number" placeholder="Enter b= ">
+
+    <button onclick="check()">Check</button>
+
+    <br><br>
+
+    <h1 id="answer"></h1>
+
+    
+    <script>
+
+        function check(){
+               x = Number(document.getElementById('a').value)
+        z = (document.getElementById('c').value)
+        y = Number(document.getElementById('b').value)
+
+        // document.getElementById('answer').innerHTML = x z y
+
+
+        if(z=="<"){
+                document.getElementById('answer').innerHTML = x<y 
+            }else if(z==">"){
+                
+                document.getElementById('answer').innerHTML = x>y 
+            }else if(z=="=="){
+                
+                document.getElementById('answer').innerHTML = x==y 
+            }else if(z=="!="){
+                
+                document.getElementById('answer').innerHTML = x!=y 
+            }else if(z==">="){
+                
+                document.getElementById('answer').innerHTML = x>=y 
+            }else if(z=="<="){
+            document.getElementById('answer').innerHTML = x<=y 
+
+        }else{
+            document.getElementById('answer').innerHTML = "Please enter correct input"
+        }
+
+        }
+     
+    </script>
+</body>
+</html>

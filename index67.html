@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Fighter Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        #gameCanvas {
+            display: block;
+            margin: 0 auto;
+            background-color: #1b1b1b;
+            width: 800px;
+            height: 400px;
+            position: relative;
+            border: 2px solid #fff;
+        }
+
+        .fighter {
+            position: absolute;
+            width: 60px;
+            height: 100px;
+            background-color: red;
+            bottom: 50px;
+        }
+
+        .fighter1 {
+            left: 100px;
+        }
+
+        .fighter2 {
+            right: 100px;
+            background-color: blue;
+        }
+
+        .health-bar {
+            position: absolute;
+            top: 10px;
+            height: 20px;
+            background-color: green;
+            width: 100px;
+        }
+
+        .fighter1-health {
+            left: 50px;
+        }
+
+        .fighter2-health {
+            right: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="gameCanvas">
+    <div class="fighter fighter1" id="fighter1"></div>
+    <div class="fighter fighter2" id="fighter2"></div>
+
+    <div class="health-bar fighter1-health" id="fighter1-health"></div>
+    <div class="health-bar fighter2-health" id="fighter2-health"></div>
+</div>
+
+<script>
+    let fighter1 = document.getElementById("fighter1");
+    let fighter2 = document.getElementById("fighter2");
+
+    let fighter1Health = 100;
+    let fighter2Health = 100;
+
+    const healthBar1 = document.getElementById("fighter1-health");
+    const healthBar2 = document.getElementById("fighter2-health");
+
+    let fighter1X = 100; // initial position of fighter 1
+    let fighter2X = 640; // initial position of fighter 2
+
+    // Movement and attack control for fighter1
+    document.addEventListener('keydown', function (event) {
+        switch (event.key) {
+            case 'd': // move fighter1 right
+                fighter1X += 10;
+                if (fighter1X + 60 < fighter2X) {
+                    fighter1.style.left = fighter1X + "px";
+                }
+                break;
+            case 'a': // move fighter1 left
+                fighter1X -= 10;
+                if (fighter1X > 0) {
+                    fighter1.style.left = fighter1X + "px";
+                }
+                break;
+            case 'w': // attack
+                if (fighter1X + 60 >= fighter2X) {
+                    fighter2Health -= 10;
+                    healthBar2.style.width = fighter2Health + "px";
+                    if (fighter2Health <= 0) {
+                        alert("Fighter 1 wins!");
+                        resetGame();
+                    }
+                }
+                break;
+        }
+    });
+
+    // Movement and attack control for fighter2
+    document.addEventListener('keydown', function (event) {
+        switch (event.key) {
+            case 'ArrowRight': // move fighter2 right
+                fighter2X += 10;
+                if (fighter2X + 60 <= 800 && fighter2X > fighter1X + 60) {
+                    fighter2.style.left = fighter2X + "px";
+                }
+                break;
+            case 'ArrowLeft': // move fighter2 left
+                fighter2X -= 10;
+                if (fighter2X > fighter1X + 60) {
+                    fighter2.style.left = fighter2X + "px";
+                }
+                break;
+            case 'ArrowUp': // attack
+                if (fighter1X + 60 >= fighter2X) {
+                    fighter1Health -= 10;
+                    healthBar1.style.width = fighter1Health + "px";
+                    if (fighter1Health <= 0) {
+                        alert("Fighter 2 wins!");
+                        resetGame();
+                    }
+                }
+                break;
+        }
+    });
+
+    function resetGame() {
+        fighter1Health = 100;
+        fighter2Health = 100;
+        healthBar1.style.width = fighter1Health + "px";
+        healthBar2.style.width = fighter2Health + "px";
+        fighter1X = 100;
+        fighter2X = 640;
+        fighter1.style.left = fighter1X + "px";
+        fighter2.style.left = fighter2X + "px";
+    }
+</script>
+
+</body>
+</html>

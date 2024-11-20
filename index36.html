@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="data(event)">
+        <input type="text" placeholder="Enter your name" id="name"> <br><br>
+        <input type="number" placeholder="Enter your Phone" id="num"> <br><br>
+        <input type="email" placeholder="Enter your email" id="mail"> <br><br>
+        <input type="submit"  id="sub"> <br><br>
+    </form>
+
+<p id="ans">
+
+</p>
+
+    <script>
+       function data(event){
+        event.preventDefault();
+
+        naam = document.getElementById('name').value
+        number = document.getElementById('num').value
+        mailid = document.getElementById('mail').value
+
+
+        const student  = {
+
+            n:naam,
+            phone:number,
+            e:mailid
+
+        }
+
+
+        document.getElementById('ans').innerHTML = "Name: "+student.n+ "<br>"+ "Phone: "+student.phone + "<br>" +"Email: "+student.e 
+        console.log(student)
+
+
+        }
+    </script>
+</body>
+</html>

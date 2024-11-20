@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods Demo</title>
+</head>
+<body>
+    <input type="text" id="inputtext" placeholder="Enter some text"><br>
+
+    <button onclick="len()">Get Length</button>
+    <button onclick="charat()">Get Char at Position</button>
+    <button onclick="charcodeat()">Get Char Code at Position</button>
+    <button onclick="at()">At</button>
+    <button onclick="sliceText()">Get Slice</button>
+    <button onclick="substringText()">Get Substring</button>
+    <button onclick="substrText()">Get Substr</button>
+    <button onclick="touppercase()">Get Uppercase</button>
+    <button onclick="tolowercase()">Get Lowercase</button>
+    <button onclick="concatText()">Get Concatenated</button>
+    <button onclick="trimText()">Get Trim</button>
+    <button onclick="trimstart()">Get Trimstart</button>
+    <button onclick="trimend()">Get Trimend</button>
+    <button onclick="padstart()">Get Padstart</button>
+    <button onclick="padend()">Get Padend</button>
+    <button onclick="repeatText()">Get Repeat</button>
+    <button onclick="replaceText()">Get Replace</button>
+    <button onclick="replaceallText()">Get ReplaceAll</button>
+    <button onclick="splitText()">Get Split</button>
+
+    <h1 id="ans"></h1>
+
+    <script>
+        const inputElement = document.getElementById('inputtext');
+        const outputElement = document.getElementById('ans');
+
+        function len() {
+            let a = inputElement.value;
+            outputElement.innerHTML = "Length: " + a.length;
+        }
+
+        function charat() {
+            let a = inputElement.value;
+            let index = prompt("Enter position: ");
+            outputElement.innerHTML = "Char at position " + index + ": " + a.charAt(index);
+        }
+
+        function charcodeat() {
+            let a = inputElement.value;
+            let index = prompt("Enter position: ");
+            outputElement.innerHTML = "Char code at position " + index + ": " + a.charCodeAt(index);
+        }
+
+        function at() {
+            let a = inputElement.value;
+            let index = prompt("Enter position: ");
+            outputElement.innerHTML = "Char at position " + index + ": " + a.at(index);
+        }
+
+        function sliceText() {
+            let a = inputElement.value;
+            let start = prompt("Enter start position: ");
+            let end = prompt("Enter end position: ");
+            outputElement.innerHTML = "Sliced string: " + a.slice(start, end);
+        }
+
+        function substringText() {
+            let a = inputElement.value;
+            let start = prompt("Enter start position: ");
+            let end = prompt("Enter end position: ");
+            outputElement.innerHTML = "Substring: " + a.substring(start, end);
+        }
+
+        function substrText() {
+            let a = inputElement.value;
+            let start = prompt("Enter start position: ");
+            let length = prompt("Enter length: ");
+            outputElement.innerHTML = "Substr: " + a.substr(start, length);
+        }
+
+        function touppercase() {
+            let a = inputElement.value;
+            outputElement.innerHTML = "Uppercase: " + a.toUpperCase();
+        }
+
+        function tolowercase() {
+            let a = inputElement.value;
+            outputElement.innerHTML = "Lowercase: " + a.toLowerCase();
+        }
+
+        function concatText() {
+            let a = inputElement.value;
+            let b = prompt("Enter second string to concatenate: ");
+            outputElement.innerHTML = "Concatenated: " + a.concat(b);
+        }
+
+        function trimText() {
+            let a = inputElement.value;
+            outputElement.innerHTML = "Trimmed: " + a.trim();
+        }
+
+        function trimstart() {
+            let a = inputElement.value;
+            outputElement.innerHTML = "Trim Start: " + a.trimStart();
+        }
+
+        function trimend() {
+            let a = inputElement.value;
+            outputElement.innerHTML = "Trim End: " + a.trimEnd();
+        }
+
+        function padstart() {
+            let a = inputElement.value;
+            let length = prompt("Enter total length: ");
+            let pad = prompt("Enter padding string: ");
+            outputElement.innerHTML = "Pad Start: " + a.padStart(length, pad);
+        }
+
+        function padend() {
+            let a = inputElement.value;
+            let length = prompt("Enter total length: ");
+            let pad = prompt("Enter padding string: ");
+            outputElement.innerHTML = "Pad End: " + a.padEnd(length, pad);
+        }
+
+        function repeatText() {
+            let a = inputElement.value;
+            let times = prompt("Enter number of repeats: ");
+            outputElement.innerHTML = "Repeated: " + a.repeat(times);
+        }
+
+        function replaceText() {
+            let a = inputElement.value;
+            let search = prompt("Enter string to replace: ");
+            let replace = prompt("Enter new string: ");
+            outputElement.innerHTML = "Replaced: " + a.replace(search, replace);
+        }
+
+        function replaceallText() {
+            let a = inputElement.value;
+            let search = prompt("Enter string to replace: ");
+            let replace = prompt("Enter new string: ");
+            outputElement.innerHTML = "Replaced all: " + a.replaceAll(search, replace);
+        }
+
+        function splitText() {
+            let a = inputElement.value;
+            let delimiter = prompt("Enter delimiter: ");
+            outputElement.innerHTML = "Split: " + a.split(delimiter).join(', ');
+        }
+    </script>
+</body>
+</html>

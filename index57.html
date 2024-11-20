@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        ask = Number(prompt("Choose 1 for Biryani, CHoose 2 for pizza, choose 3 for burger, choose 4 for pasta:"))
+
+        switch(ask){
+            case 1:
+                quan = Number(prompt("How many plates biryani you want: "))
+                price = 150
+                window.alert("Total Payment: " + quan*price)
+                window.alert("Thank You")
+                break
+            case 2:
+                quan = Number(prompt("How many pizza's you want: "))
+                price = 250
+                window.alert("Total Payment: " + quan*price)
+                window.alert("Thank You")
+                break
+            case 3:
+                quan = Number(prompt("How many burger's you want: "))
+                price = 100
+                window.alert("Total Payment: " + quan*price)
+                window.alert("Thank You")
+                break
+            case 4:
+                quan = Number(prompt("How many plates pasta you want: "))
+                price = 60
+                window.alert("Total Payment: " + quan*price)
+                window.alert("Thank You")
+                break
+            default:
+                window.alert("Please choose in the menu:")
+
+        }
+    </script>
+    
+</body>
+</html>
